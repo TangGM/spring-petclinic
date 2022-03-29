@@ -4,7 +4,7 @@ pipeline {
     stage('analyze') {
       steps {
         withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonarqube') {
-          sh 'mvn clean verify sonar:sonar'
+          sh 'mvn clean sonar:sonar'
         }
 
       }
